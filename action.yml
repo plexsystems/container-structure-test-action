@@ -1,0 +1,22 @@
+name: "Container Structure Test Action"
+description: "Setup Container Structure Test in your GitHub workflows"
+author: "Plex Systems"
+
+inputs:
+  image:
+    description: "Image (including :tag) to test"
+  config:
+    description: "Path (relative to the root of the repository) to the test config"
+branding:
+    icon: 'anchor'
+    color: 'blue'
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - container-structure-test
+    - test
+    - --image
+    - ${{ inputs.image }}
+    - --config
+    - ${{ inputs.config }}

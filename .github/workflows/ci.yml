@@ -1,0 +1,18 @@
+name: "build-test"
+on: [pull_request]
+
+jobs:
+  check-pr:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout source
+      uses: actions/checkout@v1
+
+    - name: docker build
+      run: docker build . -t container-structure-test:dev
+
+    - name: run action
+      uses: ./
+      with:
+        image: container-structure-test:dev
+        config: test/test.yaml
