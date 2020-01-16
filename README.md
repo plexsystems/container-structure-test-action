@@ -2,12 +2,7 @@
 
 ![Build Status](https://github.com/plexsystems/container-structure-test-action/workflows/build-test/badge.svg)
 
-
 Setup [container-structure-test](https://github.com/GoogleContainerTools/container-structure-test) for use in your [GitHub Action](https://github.com/features/actions) workflows.
-
-```
-NOTE: This action assumes a Linux environment, and will not work on Windows or MacOS.
-```
 
 ## Required inputs
 
