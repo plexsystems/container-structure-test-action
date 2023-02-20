@@ -1,7 +1,8 @@
-FROM alpine:3.11.2
+FROM alpine:3.17
 
-RUN apk add curl
-
-RUN curl -LO https://storage.googleapis.com/container-structure-test/v1.9.0/container-structure-test-linux-amd64 \
-    && chmod +x container-structure-test-linux-amd64 \
-    && mv container-structure-test-linux-amd64 /usr/local/bin/container-structure-test
+# renovate: datasource=github-releases depName=container-structure-test lookupName=GoogleContainerTools/container-structure-test
+ARG CST_VERSION=1.14.0
+RUN apk add --no-cache curl \
+    && curl -sSL https://storage.googleapis.com/container-structure-test/v${CST_VERSION}/container-structure-test-linux-amd64 -o /usr/local/bin/container-structure-test \
+    && chmod +x /usr/local/bin/container-structure-test \
+    && apk del curl
