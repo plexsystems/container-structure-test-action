@@ -1,7 +1,5 @@
 # container-structure-test-action
 
-![Build Status](https://github.com/plexsystems/container-structure-test-action/workflows/build-test/badge.svg)
-
 Setup [container-structure-test](https://github.com/GoogleContainerTools/container-structure-test) for use in your [GitHub Action](https://github.com/features/actions) workflows.
 
 ## Required inputs
@@ -20,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: checkout source
-      uses: actions/checkout@master
+      uses: actions/checkout@main
 
     - name: run structure tests
       uses: plexsystems/container-structure-test-action@v0.1.0
